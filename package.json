@@ -15,12 +15,17 @@
     "type": "git",
     "url": "git+https://github.com/dashkite/module.git"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "",
   "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
     "url": "https://github.com/dashkite/module/issues"
   },
   "homepage": "https://github.com/dashkite/module#readme",
+  "devDependencies": {
+    "@dashkite/genie": "^0.1.0",
+    "@dashkite/masonry": "^0.3.0",
+    "amen": "^3.0.0",
+    "coffeescript": "^2.5.1"
+  }
 }
