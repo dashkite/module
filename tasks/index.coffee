@@ -1,7 +1,7 @@
 import "coffeescript/register"
 import * as t from "@dashkite/genie"
 import * as b from "@dashkite/masonry"
-import {coffee} from "@dashkite/masonry-coffee"
+import {coffee} from "@dashkite/masonry/coffee"
 
 t.define "clean", -> b.rm "build"
 
