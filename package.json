@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "main": "build/src/index.js",
-  "main:coffee": "src/index.coffee",
+  "exports": "./build/src/index.js",
   "files": [
     "build/src",
     "src"
