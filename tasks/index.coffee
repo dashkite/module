@@ -1,16 +1,32 @@
 import "coffeescript/register"
+import p from "path"
+import * as _ from "@dashkite/joy"
 import * as t from "@dashkite/genie"
-import * as b from "@dashkite/masonry"
+import * as m from "@dashkite/masonry"
 import {coffee} from "@dashkite/masonry/coffee"
 
-t.define "clean", -> b.rm "build"
+t.define "clean", -> m.rm "build"
 
-t.define "build", "clean", b.start [
-  b.glob [ "{src,test}/**/*.coffee" ], "."
-  b.read
-  b.tr coffee "node"
-  b.extension ".js"
-  b.write "build"
+t.define "build", "clean", m.start [
+  m.glob [ "{src,test}/**/*.coffee" ], "."
+  m.read
+  _.flow [
+    m.tr coffee target: "node"
+    m.extension ".js"
+    m.write p.join "build", "node"
+  ]
+  _.flow [
+    m.tr coffee target: "import"
+    m.extension ".js"
+    m.write p.join "build", "import"
+  ]
 ]
 
-t.define "test", -> require "../test"
+t.define "node:test", [ "build" ], ->
+  m.exec "node", [
+    "--enable-source-maps"
+    "./build/node/test/index.js"
+  ]
+
+t.define "test", [ "clean" ], ->
+  require "../test"
