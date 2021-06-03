@@ -1,4 +1,4 @@
-import assert from "assert"
+import assert from "@dashkite/assert"
 import {print, test, success} from "amen"
 
 import * as x from "../src"

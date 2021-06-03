@@ -2,21 +2,6 @@
   "name": "@dashkite/module",
   "version": "0.0.0",
   "description": "",
-  "main": "build/node/src/index.js",
-  "exports": {
-    ".": {
-      "import": "./build/import/src/index.js",
-      "node": "./build/node/src/index.js"
-    },
-    "./*": {
-      "import": "./build/import/src/*.js",
-      "node": "./build/node/src/*.js"
-    }
-  },
-  "files": [
-    "build/import/src",
-    "build/node/src"
-  ],
   "scripts": {
     "test": "genie test"
   },
@@ -32,9 +17,10 @@
   },
   "homepage": "https://github.com/dashkite/module#readme",
   "devDependencies": {
-    "@dashkite/genie": "^0.3.3",
-    "@dashkite/genie-presets": "^0.1.1",
-    "@dashkite/joy": "^0.3.0",
+    "@dashkite/assert": "^0.1.2",
+    "@dashkite/genie": "^0.5.2",
+    "@dashkite/genie-presets": "^0.2.2",
+    "@dashkite/joy": "^0.3.7",
     "amen": "^3.0.0",
     "coffeescript": "^2.5.1"
   }
